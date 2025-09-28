@@ -3,7 +3,7 @@ import { genres } from "../../public/data";
 // ...existing code...
 
 
-const PodcastControls = ({
+const PodcastControls = ({//props for control states and setters
   searchQuery,
   setSearchQuery,
   sortBy,
@@ -17,12 +17,12 @@ const PodcastControls = ({
       <input
         type="text"
         placeholder="Search podcasts..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchQuery}//search state
+        onChange={(e) => setSearchQuery(e.target.value)}//update search state on input
       />
 
       {/* Sort Dropdown */}
-      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>//sort state and update function
         <option value="date-desc">Newest First</option>
         <option value="title-asc">Title A–Z</option>
         <option value="title-desc">Title Z–A</option>
@@ -31,12 +31,12 @@ const PodcastControls = ({
       {/* Genre Filter */}
       <select
         value={selectedGenre}
-        onChange={(e) => setSelectedGenre(e.target.value)}
+        onChange={(e) => setSelectedGenre(e.target.value)}//genre filter state and update function
       >
         <option value="">All Genres</option>
-        {genres.map((genre) => (
-          <option key={genre.id} value={genre.title}>
-            {genre.title}
+        {genres.map((genre) => (//map through genres for options
+          <option key={genre.id} value={genre.title}>//option for each genre
+            {genre.title}//display genre title
           </option>
         ))}
       </select>
