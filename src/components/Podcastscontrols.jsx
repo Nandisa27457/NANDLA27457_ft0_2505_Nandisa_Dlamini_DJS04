@@ -1,5 +1,6 @@
 import React from "react";
-import { getGenres } from "../utility";
+import { genres } from "../../public/data";
+// ...existing code...
 
 
 const PodcastControls = ({
@@ -33,13 +34,11 @@ const PodcastControls = ({
         onChange={(e) => setSelectedGenre(e.target.value)}
       >
         <option value="">All Genres</option>
-        <option value="Personal-growth">Personal growth </option>
-        <option value="Business">Business</option>
-        <option value="Comedy">Comedy</option>
-        <option value="History">History</option>
-        <option value="Entertainment">Entertainment</option>
-        <option value="News">News</option>
-        <option value="Fiction">Fiction</option>
+        {genres.map((genre) => (
+          <option key={genre.id} value={genre.title}>
+            {genre.title}
+          </option>
+        ))}
       </select>
     </div>
   );
