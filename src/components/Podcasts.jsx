@@ -33,24 +33,22 @@ const Podcasts = () => {
   const processedPodcasts = useMemo(() => {
     let result = [...podcasts];
 
-    // Search
+    // Search bar
     if (searchQuery.trim() !== '') {
       result = result.filter((p) =>
         p.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
-    // Filter;
+    // Genre Filter;
+    if (selectedGenre) {
+        result = result.filter((p) => {
+            const titles = getGenres(p.genres);
+            return titles.includes(selectedGenre);
+        });
+    }
 
-if (selectedGenre) {
-  result = result.filter((p) => {
-    const titles = getGenres(p.genreIds); // e.g. ["Technology", "Business"]
-    return titles.includes(selectedGenre);
-  });
-}
-
-
-    // Sort
+    // Dynamic Sorting
     result.sort((a, b) => {
       if (sortBy === 'date-desc') return new Date(b.lastUpdated) - new Date(a.lastUpdated);
       if (sortBy === 'title-asc') return a.title.localeCompare(b.title);
