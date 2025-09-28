@@ -68,6 +68,20 @@ header {
   top:0;
   font-size: small;
 }
+ input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border:none;
+  border-radius: 15px;
+  margin-left: 1rem;
+}
+select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border:none;
+  border-radius: 15px;
+  margin-left: 1rem;
+}   
 
 @keyframes logo-spin {
   from {
