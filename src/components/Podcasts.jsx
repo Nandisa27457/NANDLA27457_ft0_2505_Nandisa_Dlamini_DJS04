@@ -101,14 +101,14 @@ const Podcasts = () => {
         setSelectedGenre={setSelectedGenre}//function to update genre filter state
       />
 
-      {/* Podcast Grid */}//podcast grid
-      <div className="podcast-grid">//podcast grid container
+      {/* Podcast Grid */}
+      <div className="podcast-grid">
         {paginatedPodcasts.map((podcast) => (//map through paginated podcasts
           <Podcast key={podcast.id} {...podcast} />//podcast component for each podcast
         ))}
       </div>
 
-      {/* Pagination */}//pagination controls
+      {/* Pagination */}
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
@@ -117,7 +117,7 @@ const Podcasts = () => {
             disabled={currentPage === i + 1}//disable button for current page
             onClick={() => setCurrentPage(i + 1)}//set current page on click
           >
-            {i + 1}//page number
+            {i + 1}
           </button>
         ))}
       </div>

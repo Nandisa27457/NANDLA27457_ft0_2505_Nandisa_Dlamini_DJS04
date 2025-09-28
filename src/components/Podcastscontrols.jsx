@@ -35,8 +35,8 @@ const PodcastControls = ({//props for control states and setters
       >
         <option value="">All Genres</option>
         {genres.map((genre) => (//map through genres for options
-          <option key={genre.id} value={genre.title}>//option for each genre
-            {genre.title}//display genre title
+          <option key={genre.id} value={genre.title}>
+            {genre.title}
           </option>
         ))}
       </select>
