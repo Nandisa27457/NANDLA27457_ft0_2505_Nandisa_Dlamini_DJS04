@@ -49,10 +49,10 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 50px;
+  margin-top:25px;
+  margin-right: 20px;
+  margin-left:10px;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -67,6 +67,16 @@ header {
   position: absolute;
   top:0;
   font-size: small;
+}
+
+.podcast-controls {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position:relative;
+  top:50px;
 }
  input {
   font-size: 1rem;
@@ -92,7 +102,7 @@ select {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media screen and (max-width: 600px) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
