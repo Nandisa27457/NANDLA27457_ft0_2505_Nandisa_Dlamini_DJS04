@@ -78,6 +78,18 @@ header {
   position:relative;
   top:50px;
 }
+
+@media (max-width: 600px) {
+  .podcast-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .podcast-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto 2rem auto;
+  }
+}
  input {
   font-size: 1rem;
   padding: 0.5rem;
